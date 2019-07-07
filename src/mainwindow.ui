@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IntruderVISION</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tab_UI">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-30</y>
+      <width>835</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="usesScrollButtons">
+     <bool>false</bool>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="Menu">
+     <attribute name="title">
+      <string>Menu</string>
+     </attribute>
+     <widget class="QLabel" name="lbl_Title">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>200</y>
+        <width>391</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:600;&quot;&gt;IntruderVISION&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Qt Edition&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_openAcq">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>220</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Monitoraggio</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_openSettings">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>260</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Impostazioni</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_openCalibration">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>300</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calibrazione</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Acquisition">
+     <attribute name="title">
+      <string>Acquisition</string>
+     </attribute>
+     <widget class="QLabel" name="lblTxt_fps">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>440</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>fps</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_original">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>70</y>
+        <width>400</width>
+        <height>300</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sb_fpsCounter">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>440</y>
+        <width>42</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="keyboardTracking">
+       <bool>false</bool>
+      </property>
+      <property name="maximum">
+       <number>99</number>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="txte_errors">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>430</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="undoRedoEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_backToMenu">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Torna al menu</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="sb_DoubleArea">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>500</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="keyboardTracking">
+       <bool>false</bool>
+      </property>
+      <property name="maximum">
+       <double>31000.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTxt_MovingArea">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>480</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dimensione area del movimento</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTxt_cmSQ">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>500</y>
+        <width>47</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;cm&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listOut_intrusions">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>70</y>
+        <width>231</width>
+        <height>451</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_getSnapshot">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>380</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Scatta foto</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Settings">
+     <attribute name="title">
+      <string>Settings</string>
+     </attribute>
+     <widget class="QTabWidget" name="tab_settings">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>100</y>
+        <width>491</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="Notifica">
+       <attribute name="title">
+        <string>Notifica</string>
+       </attribute>
+       <widget class="QLineEdit" name="strIn_EmailAddress">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>80</y>
+          <width>281</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="cb_SendMails">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>131</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Attivare l'invio di email?</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="cb_MailMovementDetected">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>140</y>
+          <width>191</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>È stato rilevato un movimento</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="cb_MailAddressChanged">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>160</y>
+          <width>201</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>È stato modificato l'indirizzo email</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="cb_MailSessionEnded">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>180</y>
+          <width>251</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>La sessione di monitoraggio viene terminata</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblTxt_InserMailAddress">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>60</y>
+          <width>151</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Inserisci indirizzo email</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblTxt_SendMailIf">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>120</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Invia email se:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_TestMail">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>80</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Test Mail</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblTxt_isMailValid">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>60</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Indirizzo email non valido&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Webcam">
+       <attribute name="title">
+        <string>Webcam</string>
+       </attribute>
+       <widget class="QComboBox" name="cb_selectWebcam">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>50</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblTxt_SelezionaWebcam">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Seleziona webcam</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_refreshWebcamList">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>50</y>
+          <width>91</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Aggiorna lista</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Save">
+       <attribute name="title">
+        <string>Salvataggio</string>
+       </attribute>
+       <widget class="QCheckBox" name="cb_SaveMedia">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>231</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Attiva il salvataggio di video</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="strIn_savePath">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>80</y>
+          <width>281</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblTxt_SavePath">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>60</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Indirizzo di salvataggio</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_chooseFile">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>80</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sfoglia...</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pb_backToMenu2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Torna al menu</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_confirm">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>370</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Conferma</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Calibration">
+     <attribute name="title">
+      <string>Calibration</string>
+     </attribute>
+     <widget class="QLabel" name="lbl_CalibPreview">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>100</y>
+        <width>400</width>
+        <height>300</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_GetCalibrationImage">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>420</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calibra</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_backToMenu3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Torna al menu</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>830</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="actionAbout_sw">
+   <property name="text">
+    <string>About sw ...</string>
+   </property>
+  </action>
+  <action name="actionHow_to">
+   <property name="text">
+    <string>How to ...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
